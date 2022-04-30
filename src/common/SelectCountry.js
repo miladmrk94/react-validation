@@ -1,10 +1,15 @@
 import React from "react";
 import countryList from "./CountryList";
+import styles from "../Styles/SelectMonth.module.scss";
 
 const SelectCountry = ({ formik, name }) => {
   return (
     <>
-      <select onChange={formik.handleChange} name={name}>
+      <select
+        className={styles.selectBoxCountry}
+        onChange={formik.handleChange}
+        name={name}
+      >
         {countryList.map((i) => {
           return (
             <option key={i.value} value={i.value}>

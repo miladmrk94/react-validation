@@ -7,7 +7,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <SignUpComponent />
+      <section>
+        <SignUpComponent />
+      </section>
       <Footer />
     </div>
   );

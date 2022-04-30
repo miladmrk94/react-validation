@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "../Styles/SelectMonth.module.scss";
 const SelectMonth = ({ formik, name }) => {
   const selectMonthOptions = [
     {
@@ -58,6 +59,7 @@ const SelectMonth = ({ formik, name }) => {
   return (
     <>
       <select
+        className={styles.selectBoxMonth}
         name={name}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
@@ -72,7 +74,7 @@ const SelectMonth = ({ formik, name }) => {
         })}
       </select>
       {formik.errors[name] && formik.touched[name] && (
-        <div>{formik.errors[name]}</div>
+        <p>{formik.errors[name]}</p>
       )}
     </>
   );

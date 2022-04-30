@@ -1,0 +1,44 @@
+.input {
+  height: 2.4rem;
+  border-radius: 0.1rem;
+  background-color: #222d35;
+  border: none;
+  margin: 0.3rem;
+  padding: 0.3rem;
+  color: azure;
+  font-size: 15px;
+  width: 20vw;
+  &:focus {
+    outline: none;
+    border: 1px solid #30a386;
+    box-shadow: 0px 0px 5px #30a38659;
+    -moz-box-shadow: 0px 0px 5px #30a38646;
+    -webkit-box-shadow: 0px 0px 5px #30a3863b;
+  }
+  &::placeholder {
+    color: rgb(170, 169, 169);
+  }
+}
+.container {
+  background-color: #141d23;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.2rem;
+  width: 80vw;
+  .form {
+    padding: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    .nameBox{
+      display: flex;
+      
+      
+    }
+    .birthdayBox{
+      display: flex;
+      align-items: center;
+
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "../Styles/SignUpComponent.module.scss";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import Input from "../common/Input";
@@ -66,14 +67,41 @@ const SignUpComponent = () => {
     validationSchema,
   });
   return (
-    <div>
-      <form onSubmit={formik.handleSubmit}>
-        <Input formik={formik} name="firstName" label="First Name" />
-        <Input formik={formik} name="lastName" label="last Name" />
-        <div>
-          <SelectMonth formik={formik} name="month" label="Month" />
-          <Input type="number" formik={formik} name="day" label="Day" />
-          <Input type="number" formik={formik} name="year" label="Year" />
+    <div className={styles.container}>
+      <form className={styles.form} onSubmit={formik.handleSubmit}>
+        <div className={styles.nameBox}>
+          <Input
+            className={styles.input}
+            formik={formik}
+            name="firstName"
+            holder="First Name"
+          />
+          <Input
+            className={styles.input}
+            formik={formik}
+            name="lastName"
+            holder="Last Name"
+          />
+        </div>
+        <div className={styles.birthdayBox}>
+          <div>
+            {" "}
+            <SelectMonth formik={formik} name="month" label="Month" />
+          </div>
+          <Input
+            className={styles.input}
+            type="number"
+            formik={formik}
+            name="day"
+            holder="Day"
+          />
+          <Input
+            className={styles.input}
+            type="number"
+            formik={formik}
+            name="year"
+            holder="Year"
+          />
         </div>
         <div>
           <h3>Gender</h3>
@@ -93,28 +121,31 @@ const SignUpComponent = () => {
         </div>
         <div>
           <Input
+            className={styles.input}
             formik={formik}
             type="number"
             name="phoneNumber"
-            label="Phone Number"
+            holder="Phone Number"
           />
         </div>
         <div>
           <Input
+            className={styles.input}
             formik={formik}
             type={showPass ? "text" : "password"}
             name="password"
-            label="password"
+            holder="Password"
           />
           <button type="button" onClick={() => setShowPass(!showPass)}>
             Show
           </button>
 
           <Input
+            className={styles.input}
             formik={formik}
             type={showPassConfirm ? "text" : "password"}
             name="passwordConfirm"
-            label="passwordConfirm"
+            holder="Password Confirm"
           />
           <button
             type="button"
