@@ -32,10 +32,10 @@ const SignUpComponent = () => {
     lastName: Yup.string().required("Please enter the required field"),
     year: Yup.string()
       .matches(/^(19|20)\d{2}$/, "Is Invalid")
-      .required("Please enter the birthday year"),
-    month: Yup.string().required("Please Select the birthday Month"),
+      .required("Year is required"),
+    month: Yup.string().required("Month is required"),
     day: Yup.string()
-      .required("Please enter the birthday day")
+      .required("Day is required")
       .matches(/^(0?[1-9]|1[0-9]|2[0-9]|3[0-1])$/, "Is Invalid"),
     gender: Yup.string().required("Please Select the gender"),
     country: Yup.string().required("Please Select the country's"),
@@ -75,18 +75,25 @@ const SignUpComponent = () => {
             formik={formik}
             name="firstName"
             holder="First Name"
+            classErrors={styles.errors}
           />
           <Input
             className={styles.input}
             formik={formik}
             name="lastName"
             holder="Last Name"
+            classErrors={styles.errors}
           />
         </div>
         <div className={styles.birthdayBox}>
           <div>
             {" "}
-            <SelectMonth formik={formik} name="month" label="Month" />
+            <SelectMonth
+              classErrors={styles.errors}
+              formik={formik}
+              name="month"
+              label="Month"
+            />
           </div>
           <Input
             className={styles.input}
@@ -94,6 +101,7 @@ const SignUpComponent = () => {
             formik={formik}
             name="day"
             holder="Day"
+            classErrors={styles.errors}
           />
           <Input
             className={styles.input}
@@ -101,6 +109,7 @@ const SignUpComponent = () => {
             formik={formik}
             name="year"
             holder="Year"
+            classErrors={styles.errors}
           />
         </div>
         <div>

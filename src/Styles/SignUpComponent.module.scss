@@ -1,13 +1,15 @@
+
+
 .input {
   height: 2.4rem;
   border-radius: 0.1rem;
   background-color: #222d35;
   border: none;
-  margin: 0.3rem;
   padding: 0.3rem;
   color: azure;
   font-size: 15px;
-  width: 20vw;
+  width: 100%;
+  transition: all 0.3s;
   &:focus {
     outline: none;
     border: 1px solid #30a386;
@@ -19,26 +21,60 @@
     color: rgb(170, 169, 169);
   }
 }
+
+
 .container {
   background-color: #141d23;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 0.2rem;
-  width: 80vw;
+  width: 95vw;
+  transition: all 0.3s;
+
   .form {
     padding: 0.3rem;
     display: flex;
     flex-direction: column;
+    width: 100%;
     .nameBox{
       display: flex;
+      width: 100%;
+      margin-bottom: 1rem;
+      .errors{
+        font-size: 12px;
+        position: absolute;
+        top: 135px;
+        color: #eecf22;
       
-      
+      }
+
     }
     .birthdayBox{
       display: flex;
       align-items: center;
-
+      
+      .errors{
+        font-size: 12px;
+        position: absolute;
+        top: 195px;
+        color: #eecf22;
+        
+      
+      }
     }
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .container{
+    width: 95vw;
+    transition: all 0.3s;
+  }
+  .input {
+    width: 100%;
+    transition: all 0.3s;
+
+
   }
 }

@@ -1,8 +1,25 @@
 import React from "react";
 
-const Input = ({ formik, name, label, type = "text", holder, className }) => {
+const Input = ({
+  formik,
+  name,
+  label,
+  type = "text",
+  holder,
+  className,
+  classErrors,
+}) => {
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        width: "100%",
+        alignItems: "stretch",
+        justifyContent: "center",
+        margin: "2px",
+        flexDirection: "column",
+      }}
+    >
       <input
         className={className}
         id={name}
@@ -15,7 +32,7 @@ const Input = ({ formik, name, label, type = "text", holder, className }) => {
       />
       <label htmlFor={name}>{label}</label>
       {formik.errors[name] && formik.touched[name] && (
-        <div>{formik.errors[name]}</div>
+        <p className={classErrors}>{formik.errors[name]}</p>
       )}
     </div>
   );

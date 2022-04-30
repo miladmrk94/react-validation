@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../Styles/SelectMonth.module.scss";
-const SelectMonth = ({ formik, name }) => {
+const SelectMonth = ({ formik, name, classErrors }) => {
   const selectMonthOptions = [
     {
       label: "Month",
@@ -74,7 +74,7 @@ const SelectMonth = ({ formik, name }) => {
         })}
       </select>
       {formik.errors[name] && formik.touched[name] && (
-        <p>{formik.errors[name]}</p>
+        <p className={classErrors}>{formik.errors[name]}</p>
       )}
     </>
   );

@@ -16,7 +16,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: rgba(0, 0, 0, 0) url("../src/assets/Heptapods.webp") no-repeat scroll center center ;
   background-size: cover;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
