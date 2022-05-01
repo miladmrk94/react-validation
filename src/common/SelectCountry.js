@@ -2,7 +2,7 @@ import React from "react";
 import countryList from "./CountryList";
 import styles from "../Styles/SelectMonth.module.scss";
 
-const SelectCountry = ({ formik, name }) => {
+const SelectCountry = ({ formik, name, classErrors }) => {
   return (
     <>
       <select
@@ -19,7 +19,7 @@ const SelectCountry = ({ formik, name }) => {
         })}
       </select>
       {formik.errors[name] && formik.touched[name] && (
-        <div>{formik.errors[name]}</div>
+        <p className={classErrors}>{formik.errors[name]}</p>
       )}
     </>
   );

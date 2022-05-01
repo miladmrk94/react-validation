@@ -6,6 +6,7 @@ import Input from "../common/Input";
 import SelectMonth from "../common/SelectMonth";
 import RadioInput from "../common/RadioInput";
 import SelectCountry from "../common/SelectCountry";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 const SignUpComponent = () => {
   const [showPass, setShowPass] = useState(false);
@@ -112,8 +113,7 @@ const SignUpComponent = () => {
             classErrors={styles.errors}
           />
         </div>
-        <div>
-          <h3>Gender</h3>
+        <div className={styles.radioBox}>
           <RadioInput formik={formik} name="gender" value="male" label="Male" />
           <RadioInput
             formik={formik}
@@ -122,48 +122,68 @@ const SignUpComponent = () => {
             label="Female"
           />
           {formik.errors.gender && formik.touched.gender && (
-            <div>{formik.errors.gender}</div>
+            <p className={styles.errors}>{formik.errors.gender}</p>
           )}
         </div>
-        <div>
-          <SelectCountry formik={formik} name="country" />
-        </div>
-        <div>
+
+        <div className={styles.phoneBox}>
+          <SelectCountry
+            formik={formik}
+            name="country"
+            classErrors={styles.errorCountry}
+          />
           <Input
             className={styles.input}
             formik={formik}
             type="number"
             name="phoneNumber"
             holder="Phone Number"
+            classErrors={styles.errors}
           />
         </div>
-        <div>
-          <Input
-            className={styles.input}
-            formik={formik}
-            type={showPass ? "text" : "password"}
-            name="password"
-            holder="Password"
-          />
-          <button type="button" onClick={() => setShowPass(!showPass)}>
-            Show
-          </button>
-
-          <Input
-            className={styles.input}
-            formik={formik}
-            type={showPassConfirm ? "text" : "password"}
-            name="passwordConfirm"
-            holder="Password Confirm"
-          />
-          <button
-            type="button"
-            onClick={() => setShowPasConfirm(!showPassConfirm)}
-          >
-            show
-          </button>
+        <div className={styles.passBox}>
+          <div className={styles.password}>
+            <Input
+              className={styles.input}
+              formik={formik}
+              type={showPass ? "text" : "password"}
+              name="password"
+              holder="Password"
+              classErrors={styles.errors}
+            />
+            <div
+              type="button"
+              className={styles.eye}
+              onClick={() => setShowPass(!showPass)}
+            >
+              {showPass ? <FiEyeOff size="18px" /> : <FiEye size="18px" />}
+            </div>
+          </div>
+          <div className={styles.passwordConfirm}>
+            <Input
+              className={styles.input}
+              formik={formik}
+              type={showPassConfirm ? "text" : "password"}
+              name="passwordConfirm"
+              holder="Password Confirm"
+              classErrors={styles.errors}
+            />
+            <div
+              type="button"
+              className={styles.eyeConfirm}
+              onClick={() => setShowPasConfirm(!showPassConfirm)}
+            >
+              {showPassConfirm ? (
+                <FiEyeOff size="18px" />
+              ) : (
+                <FiEye size="18px" />
+              )}
+            </div>
+          </div>
         </div>
-        <button type="submit">SignUp</button>
+        <button className={styles.SingUp} type="submit">
+          SignUp
+        </button>
       </form>
     </div>
   );

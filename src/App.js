@@ -8,6 +8,21 @@ function App() {
     <div className="App">
       <Header />
       <section>
+        <img
+          className="img"
+          alt="lang"
+          src={require("../src/assets/LouiseHasWeapon1.png")}
+        />
+        <img
+          className="img2"
+          alt="lang"
+          src={require("../src/assets/OfferWeapon1.png")}
+        />
+        <img
+          className="img3"
+          alt="lang"
+          src={require("../src/assets/LouiseHasWeapon1.png")}
+        />
         <SignUpComponent />
       </section>
       <Footer />
