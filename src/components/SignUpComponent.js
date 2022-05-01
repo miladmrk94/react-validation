@@ -27,10 +27,10 @@ const SignUpComponent = () => {
 
   const validationSchema = Yup.object({
     firstName: Yup.string()
-      .required("Please enter the required field")
+      .required("Is required")
 
       .min(3, "the first name must be last 3 characters"),
-    lastName: Yup.string().required("Please enter the required field"),
+    lastName: Yup.string().required("Is required"),
     year: Yup.string()
       .matches(/^(19|20)\d{2}$/, "Is Invalid")
       .required("Year is required"),
