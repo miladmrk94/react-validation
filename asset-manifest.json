@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-validation/static/css/main.cb3f1cdc.css",
+    "main.css": "/react-validation/static/css/main.9bfeb411.css",
     "main.js": "/react-validation/static/js/main.def522d1.js",
     "static/media/Heptapods.webp": "/react-validation/static/media/Heptapods.166f347bddc694f784a9.webp",
     "static/media/LouiseHasWeapon1.png": "/react-validation/static/media/LouiseHasWeapon1.16e67e9a0fa641d25829.png",
     "static/media/OfferWeapon1.png": "/react-validation/static/media/OfferWeapon1.aa98cabbf9903fa594bb.png",
     "index.html": "/react-validation/index.html",
-    "main.cb3f1cdc.css.map": "/react-validation/static/css/main.cb3f1cdc.css.map",
+    "main.9bfeb411.css.map": "/react-validation/static/css/main.9bfeb411.css.map",
     "main.def522d1.js.map": "/react-validation/static/js/main.def522d1.js.map"
   },
   "entrypoints": [
-    "static/css/main.cb3f1cdc.css",
+    "static/css/main.9bfeb411.css",
     "static/js/main.def522d1.js"
   ]
 }
