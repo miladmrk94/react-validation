@@ -39,7 +39,7 @@ const SignUpComponent = () => {
       .required("Day is required")
       .matches(/^(0?[1-9]|1[0-9]|2[0-9]|3[0-1])$/, "Is Invalid"),
     gender: Yup.string().required("Please Select the gender"),
-    country: Yup.string().required("Please Select the country's"),
+    country: Yup.string().required("Select the country's"),
     phoneNumber: Yup.string()
       .required("Phone Number is required")
       .matches(/^(\+98|0)?9\d{9}$/, "Is Invalid"),
